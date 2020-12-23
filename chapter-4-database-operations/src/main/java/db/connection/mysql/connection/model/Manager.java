@@ -9,7 +9,19 @@ public class Manager {
 		this.employee = employee;
 		this.departmentName = departmentName;
 	}
-	
+
+	public Manager() {
+
+	}
+
+	@Override
+	public String toString() {
+		return "Manager{" +
+				"employee=" + employee +
+				", departmentName='" + departmentName + '\'' +
+				'}';
+	}
+
 	public Employee getEmployee() {
 		return employee;
 	}

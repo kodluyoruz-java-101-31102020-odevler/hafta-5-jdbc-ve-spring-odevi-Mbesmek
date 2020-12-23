@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import db.connection.mysql.connection.model.Employee;
+
 import org.apache.log4j.Logger;
 
 import db.connection.mysql.connection.DbSQLQuery;
@@ -22,7 +22,7 @@ public class DepartmentDAO {
 		List<Department> departments = new ArrayList<Department>();
 		
 		// Tüm departman listesini çeken SQL komutunu aşağıdaki satıra yazınız.
-		ResultSet resultSet = DbSQLQuery.select("SELECT * FROM Department");
+		ResultSet resultSet = DbSQLQuery.select("SELECT * FROM departments");
 		
 		try {
 
@@ -45,8 +45,8 @@ public class DepartmentDAO {
 	}
 	public Department createDepartment(ResultSet resultSet) throws SQLException, SQLException {
 		Department department=new Department();
-		department.setName(resultSet.getString("name"));
-		department.setDeptNo(resultSet.getString("deptNo"));
+		department.setName(resultSet.getString("dept_name"));
+		department.setDeptNo(resultSet.getString("dept_no"));
 
 		return department;
 

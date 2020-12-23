@@ -22,6 +22,14 @@ public class Department {
 		this.name = name;
 	}
 
+	@Override
+	public String toString() {
+		return "Department{" +
+				"name='" + name + '\'' +
+				", deptNo='" + deptNo + '\'' +
+				'}';
+	}
+
 	public String getDeptNo() {
 		return deptNo;
 	}

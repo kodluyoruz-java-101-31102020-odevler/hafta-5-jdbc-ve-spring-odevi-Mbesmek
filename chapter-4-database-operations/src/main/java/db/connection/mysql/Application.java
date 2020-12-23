@@ -11,8 +11,10 @@ import db.connection.mysql.connection.dao.DepartmentDAO;
 import db.connection.mysql.connection.dao.EmployeeDAO;
 import db.connection.mysql.connection.dao.ManagerDAO;
 import db.connection.mysql.connection.dao.SalaryDAO;
+import db.connection.mysql.connection.model.Department;
 import db.connection.mysql.connection.model.Employee;
 import db.connection.mysql.connection.model.EmployeeProfile;
+import db.connection.mysql.connection.model.Manager;
 import db.connection.mysql.connection.service.DepartmentService;
 import db.connection.mysql.connection.service.EmployeeService;
 import db.connection.mysql.connection.service.ManagerService;
@@ -84,10 +86,10 @@ public class Application {
 					System.out.println();
 					break;
 				case 7:
-					// burada aktif yöneticileri listeleyen bir fonksiyon yazmalısınız.
+					listDepartments(departmentService);
 					break;
 				case 8:
-					// burada tüm departmanları listeleyiniz.
+					listActiveManagers(managerService);
 					break;
 				case 9:
 					draftEmployeeProfileOperations(employeeService, salaryService);
@@ -222,13 +224,25 @@ public class Application {
 	}
 	
 	public static void listActiveManagers(ManagerService managerService) {
-		
-		// Burada ManagerService üzerinden aktif yöneticilerin listesini çekiniz ve ekrana yazdırınız
+
+		List<Manager> manager = managerService.findAll();
+
+		for(Manager mn:manager){
+			System.out.println(mn);
+		}
 		
 	}
 	
 	public static void listDepartments(DepartmentService departmentService) {
-		
+
+		List<Department> department = departmentService.findAll();
+
+		for(Department dp:department){
+			System.out.println(dp);
+		}
+
+
+
 		// Burada tğm departmanları listeleyen ve ekrana gösteren kodu yazınız.
 	}
 	
